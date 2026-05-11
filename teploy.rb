@@ -5,21 +5,21 @@
 class Teploy < Formula
   desc "Zero-downtime Docker deploys to any server via SSH"
   homepage "https://github.com/useteploy/teploy"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/useteploy/teploy/releases/download/v0.1.2/teploy_darwin_amd64.tar.gz"
-      sha256 "34e653fe30f57193fb20cb234b5ab9aac5633e40cfee05315a36e6c48dd3a21a"
+      url "https://github.com/useteploy/teploy/releases/download/v0.1.3/teploy_darwin_amd64.tar.gz"
+      sha256 "dd46daeeaa8027be8ba02d48d0458dd3e12de62298e3dd7e3ffd00983f92fad4"
 
       define_method(:install) do
         bin.install "teploy"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/useteploy/teploy/releases/download/v0.1.2/teploy_darwin_arm64.tar.gz"
-      sha256 "728ad3a7d6119a869081bd44151a4bc56b11a39980d03a44e522118a77243a5f"
+      url "https://github.com/useteploy/teploy/releases/download/v0.1.3/teploy_darwin_arm64.tar.gz"
+      sha256 "80835d93e7d5a706552580eb97d0fc1959eaa7d16a04a968b493df7fc838c385"
 
       define_method(:install) do
         bin.install "teploy"
@@ -29,15 +29,15 @@ class Teploy < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy/releases/download/v0.1.2/teploy_linux_amd64.tar.gz"
-      sha256 "2b35532e09ba2d5e451c16f29ca6b6be37aab45fa31565be4355a8627a09cccd"
+      url "https://github.com/useteploy/teploy/releases/download/v0.1.3/teploy_linux_amd64.tar.gz"
+      sha256 "48b7f8d5a2b415cee8ee1068326d3254eac87be26a67e8cb4792c4981fa6b261"
       define_method(:install) do
         bin.install "teploy"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy/releases/download/v0.1.2/teploy_linux_arm64.tar.gz"
-      sha256 "34669cb28f4a9115818192d95bc1897e927916abb678876383b7893b55f39854"
+      url "https://github.com/useteploy/teploy/releases/download/v0.1.3/teploy_linux_arm64.tar.gz"
+      sha256 "1649d19754ca0739afe0ff392c99816101b0e4c454081150c9fe87a9ab1abd5c"
       define_method(:install) do
         bin.install "teploy"
       end
