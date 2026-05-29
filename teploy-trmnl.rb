@@ -22,7 +22,14 @@ class TeployTrmnl < Formula
   depends_on "tldr"
   depends_on "gh"
   depends_on "jq"
-  depends_on "git-credential-manager"
+  # git-credential-manager ships as a cask on macOS (no Homebrew formula
+  # of that name exists). depends_on cask: forces it through the cask path.
+  on_macos do
+    depends_on cask: "git-credential-manager"
+  end
+  on_linux do
+    depends_on "git-credential-manager"
+  end
 
   def install
     bin.install "bin/trmnl"
