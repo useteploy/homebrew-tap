@@ -1,8 +1,10 @@
 class TeployTrmnl < Formula
   desc "Terminal IDE — preconfigured terminal development environment"
   homepage "https://github.com/useteploy/teploy-trmnl"
+  url "https://github.com/useteploy/teploy-trmnl/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "812c08ce0fe42bce869e247d160dd5c972278125bbd41c0a762d9c8aabb9a7b2"
+  license "MIT"
   head "https://github.com/useteploy/teploy-trmnl.git", branch: "main"
-  version "0.1.0"
 
   depends_on "neovim"
   depends_on "zellij"
