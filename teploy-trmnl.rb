@@ -22,14 +22,9 @@ class TeployTrmnl < Formula
   depends_on "tldr"
   depends_on "gh"
   depends_on "jq"
-  # git-credential-manager ships as a cask on macOS (no Homebrew formula
-  # of that name exists). depends_on cask: forces it through the cask path.
-  on_macos do
-    depends_on cask: "git-credential-manager"
-  end
-  on_linux do
-    depends_on "git-credential-manager"
-  end
+  # git-credential-manager is a cask on macOS and a formula on linuxbrew —
+  # Homebrew tap formulas can't depend on casks, and dual-paths get rejected.
+  # Made it optional and instructed through caveats below.
 
   def install
     bin.install "bin/trmnl"
@@ -58,6 +53,10 @@ class TeployTrmnl < Formula
       Recommended terminal emulator:
         brew install --cask ghostty
       Ghostty config available at: #{share}/trmnl/ghostty/config
+
+      Optional — git credential caching over HTTPS:
+        brew install --cask git-credential-manager     # macOS
+        brew install git-credential-manager            # Linux
 
       Useful commands:
         trmnl keys      — keybind cheat sheet
