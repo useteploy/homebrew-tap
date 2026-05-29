@@ -1,8 +1,9 @@
 class TeployTrmnl < Formula
   desc "Terminal IDE — preconfigured terminal development environment"
   homepage "https://github.com/useteploy/teploy-trmnl"
-  url "https://github.com/useteploy/teploy-trmnl/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "812c08ce0fe42bce869e247d160dd5c972278125bbd41c0a762d9c8aabb9a7b2"
+  url "https://github.com/useteploy/teploy-trmnl/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "2a21bbfce81698beb7d4fcf86885698cd4243ee0add0e40f29cee8a5f0e84e70"
+  version "0.1.1"
   license "MIT"
   head "https://github.com/useteploy/teploy-trmnl.git", branch: "main"
 
