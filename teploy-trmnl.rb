@@ -1,7 +1,7 @@
-class Trmnl < Formula
+class TeployTrmnl < Formula
   desc "Terminal IDE — preconfigured terminal development environment"
-  homepage "https://github.com/useteploy/trmnl"
-  head "https://github.com/useteploy/trmnl.git", branch: "main"
+  homepage "https://github.com/useteploy/teploy-trmnl"
+  head "https://github.com/useteploy/teploy-trmnl.git", branch: "main"
   version "0.1.0"
 
   depends_on "neovim"
