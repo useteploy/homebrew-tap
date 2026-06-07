@@ -5,21 +5,21 @@
 class TeployObserve < Formula
   desc "Self-hosted, single-binary replacement for PostHog + Umami + SigNoz + Sentry"
   homepage "https://github.com/useteploy/teploy-observe"
-  version "0.1.3"
+  version "0.1.4"
   license "AGPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/useteploy/teploy-observe/releases/download/v0.1.3/teploy-observe_0.1.3_darwin_x86_64.tar.gz"
-      sha256 "0f2e8f4a3eb34411673e28bad3e3ed9c32a614375d76c2d404493b17407e319a"
+      url "https://github.com/useteploy/teploy-observe/releases/download/v0.1.4/teploy-observe_0.1.4_darwin_x86_64.tar.gz"
+      sha256 "f53030fdbd6c63edd45740d15205c7367d5ca7ebc61ceb8ad360ea141592bbb6"
 
       define_method(:install) do
         bin.install "teploy-observe"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/useteploy/teploy-observe/releases/download/v0.1.3/teploy-observe_0.1.3_darwin_arm64.tar.gz"
-      sha256 "c80cb5805e894f36ecd7efcfb75f249d0bcbd14d77e874200ace0903062909d4"
+      url "https://github.com/useteploy/teploy-observe/releases/download/v0.1.4/teploy-observe_0.1.4_darwin_arm64.tar.gz"
+      sha256 "bced3e2c4256bcf18344d988f771696c9ce3158825468c7b7ad9eff4d3158931"
 
       define_method(:install) do
         bin.install "teploy-observe"
@@ -29,15 +29,15 @@ class TeployObserve < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy-observe/releases/download/v0.1.3/teploy-observe_0.1.3_linux_x86_64.tar.gz"
-      sha256 "f3375fa5f375bd97c0ae84d4aba73a5c46c9d950e14e9734495a5676eb2b9aed"
+      url "https://github.com/useteploy/teploy-observe/releases/download/v0.1.4/teploy-observe_0.1.4_linux_x86_64.tar.gz"
+      sha256 "2dcfefed5bc1ebe530e3c7bbdd954289c8c6276d3cbe1b2a9ac425b26f2c4bd2"
       define_method(:install) do
         bin.install "teploy-observe"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy-observe/releases/download/v0.1.3/teploy-observe_0.1.3_linux_arm64.tar.gz"
-      sha256 "b5aca814844cd7f8ba5e3c961889146a32481ecb669da8396734d3bf1c368a7b"
+      url "https://github.com/useteploy/teploy-observe/releases/download/v0.1.4/teploy-observe_0.1.4_linux_arm64.tar.gz"
+      sha256 "bace74fe6bdcedb7e348647d5c33d0ace2c5ffa212b828901705ba17837c5cb9"
       define_method(:install) do
         bin.install "teploy-observe"
       end
