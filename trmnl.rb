@@ -23,6 +23,11 @@ class Trmnl < Formula
   depends_on "tldr"
   depends_on "gh"
   depends_on "jq"
+  # API + database clients — the dev-loop tools trmnl was missing (an in-terminal
+  # Postman/Bruno and a DB browser). All three are in homebrew-core.
+  depends_on "atac"      # TUI API client (Postman-style, git-friendly collections)
+  depends_on "hurl"      # plain-text HTTP requests + assertions for CI / request-as-code
+  depends_on "lazysql"   # TUI database client (browse/query Postgres, MySQL, SQLite)
   # git-credential-manager is a cask on macOS and a formula on linuxbrew —
   # Homebrew tap formulas can't depend on casks, and dual-paths get rejected.
   # Made it optional and instructed through caveats below.
