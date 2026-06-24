@@ -1,4 +1,4 @@
-class TeployTrmnl < Formula
+class Trmnl < Formula
   desc "Terminal IDE — preconfigured terminal development environment"
   homepage "https://github.com/useteploy/teploy-trmnl"
   url "https://github.com/useteploy/teploy-trmnl/archive/refs/tags/v0.1.2.tar.gz"
