@@ -11,7 +11,7 @@ class Teploy < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.20/teploy_darwin_amd64.tar.gz"
-      sha256 "2daae1f2f47f227b7fbdb17853113b9af4defe3f9fe6807d2f0598a0e45ed712"
+      sha256 "f1e63547c23c5adbb50c07aef0d5564be6682a6e350761e7bb2fd6b74ef63ddc"
 
       define_method(:install) do
         bin.install "teploy"
@@ -19,7 +19,7 @@ class Teploy < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.20/teploy_darwin_arm64.tar.gz"
-      sha256 "c0b52692bef4f5d02929354d8f92778c99e97d218771ff18b85e268c0f907054"
+      sha256 "7f950407ed88bfd4831c5401c319af2718c1cf3fe41376cfc519704e59af0083"
 
       define_method(:install) do
         bin.install "teploy"
@@ -30,14 +30,14 @@ class Teploy < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.20/teploy_linux_amd64.tar.gz"
-      sha256 "99767a46d774cb2ef95eedbc53d3192b8a7628c90acf98422ae7965744df258a"
+      sha256 "9f65dd6e9f6059fbe97f2ad76cc083ce37f9642b750c4e4aae040a7da6d44d47"
       define_method(:install) do
         bin.install "teploy"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.20/teploy_linux_arm64.tar.gz"
-      sha256 "1b27fb3b899899d8fe2ef4820a579e7410e14a4eb0a010fcaaf98a22fefeb741"
+      sha256 "e2376bd64e3be5e5d8f745ff1c6b416c912ff3e0da34ca237ebad1ebc3e40e9f"
       define_method(:install) do
         bin.install "teploy"
       end
