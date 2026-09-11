@@ -1,0 +1,68 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "23 4 * * 1"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    name: Audit formulas and casks
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      # brew audit/install refuse file paths; wire the checkout in as the
+      # real tap so everything is exercised exactly as users receive it.
+      - name: Link checkout in as useteploy/tap
+        run: |
+          taps="$(brew --repository)/Library/Taps/useteploy"
+          mkdir -p "$taps"
+          ln -s "$GITHUB_WORKSPACE" "$taps/homebrew-tap"
+      - name: brew audit
+        run: |
+          brew audit --formula useteploy/tap/teploy useteploy/tap/teploy-dash useteploy/tap/trmnl
+          brew audit --cask useteploy/tap/observe
+
+  install:
+    name: Install and smoke-test every shipped command
+    runs-on: macos-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link checkout in as useteploy/tap
+        run: |
+          taps="$(brew --repository)/Library/Taps/useteploy"
+          mkdir -p "$taps"
+          ln -s "$GITHUB_WORKSPACE" "$taps/homebrew-tap"
+      - name: teploy - installed binary reports the formula version
+        run: |
+          brew install --formula useteploy/tap/teploy
+          ver="$(brew info --json=v2 useteploy/tap/teploy | jq -r '.formulae[0].versions.stable')"
+          out="$(teploy version)"
+          echo "$out"
+          echo "$out" | grep -qF "$ver"
+      - name: teploy-dash - binary runs
+        run: |
+          brew install --formula useteploy/tap/teploy-dash
+          teploy-dash --help
+      - name: observe cask - binary runs
+        run: |
+          brew install --cask useteploy/tap/observe
+          observe version
+      # Non-destructive trmnl cycle: every command runs against a
+      # throwaway HOME, so nothing on the runner (or a user machine) is
+      # modified. trmnl drags in ~20 bottled dependencies; that is the
+      # cost of testing the real install graph.
+      - name: trmnl - setup/doctor/uninstall cycle in a temporary home
+        run: |
+          brew install --formula useteploy/tap/trmnl
+          tmp="$(mktemp -d)"
+          HOME="$tmp" trmnl version
+          HOME="$tmp" trmnl setup
+          test -L "$tmp/.config/nvim"
+          HOME="$tmp" trmnl doctor
+          printf 'y\n' | HOME="$tmp" trmnl uninstall
+          test ! -e "$tmp/.config/nvim"

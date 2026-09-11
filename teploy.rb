@@ -43,4 +43,8 @@ class Teploy < Formula
       end
     end
   end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/teploy version")
+  end
 end

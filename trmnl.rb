@@ -70,4 +70,19 @@ class Trmnl < Formula
         trmnl uninstall — remove configs
     EOS
   end
+
+  test do
+    assert_match "trmnl v", shell_output("#{bin}/trmnl version")
+
+    # Non-destructive setup/doctor/uninstall cycle against a throwaway
+    # HOME: setup links configs, doctor reports, uninstall (fed its y/N
+    # prompt on stdin) removes them — nothing outside the sandbox is
+    # touched.
+    ENV["HOME"] = testpath
+    shell_output("#{bin}/trmnl setup")
+    assert_predicate testpath/".config/nvim", :symlink?
+    assert_match "Checking installation", shell_output("#{bin}/trmnl doctor")
+    shell_output("printf 'y\\n' | #{bin}/trmnl uninstall")
+    refute_predicate testpath/".config/nvim", :exist?
+  end
 end
