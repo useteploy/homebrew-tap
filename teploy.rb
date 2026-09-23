@@ -5,21 +5,21 @@
 class Teploy < Formula
   desc "Zero-downtime Docker deploys to any server via SSH"
   homepage "https://github.com/useteploy/teploy-cli"
-  version "0.1.36"
+  version "0.1.37"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.36/teploy_darwin_amd64.tar.gz"
-      sha256 "6bc424817efd88557521b9dae0602516d78cd13176153b8728a6399fc062fabb"
+      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.37/teploy_darwin_amd64.tar.gz"
+      sha256 "13df0fa7804390e8a2351c5995cfcc06ef653d9905104c070de92a143a84a3dc"
 
       define_method(:install) do
         bin.install "teploy"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.36/teploy_darwin_arm64.tar.gz"
-      sha256 "d82be394b48a8fd6880637500aa5ee38839dbfd17970726afae686686a336063"
+      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.37/teploy_darwin_arm64.tar.gz"
+      sha256 "6a44073fb39b7bba5d886affd0854789d2a330da06b38c5640819c66699e99d7"
 
       define_method(:install) do
         bin.install "teploy"
@@ -29,15 +29,15 @@ class Teploy < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.36/teploy_linux_amd64.tar.gz"
-      sha256 "ec57a012d35c779fef7a0199d5ec044a5341a317963739784320b8085e0f27f3"
+      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.37/teploy_linux_amd64.tar.gz"
+      sha256 "600d9e1a2c416e9b8eebd63ba8936d6fc16c0a9f4541fcc933a844d925abcf3a"
       define_method(:install) do
         bin.install "teploy"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.36/teploy_linux_arm64.tar.gz"
-      sha256 "0728cd57fd07a985f7d049a7c1b94604f3091c68a45919cf33d0a832615ba1a4"
+      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.37/teploy_linux_arm64.tar.gz"
+      sha256 "52ec9134595eb193942b25772011a2b976dfe10f6a925b433868a2da79557233"
       define_method(:install) do
         bin.install "teploy"
       end
