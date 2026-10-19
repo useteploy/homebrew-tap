@@ -9,16 +9,16 @@ class Teploy < Formula
 
   on_macos do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.42/teploy_darwin_amd64.tar.gz"
-      sha256 "e51da92fbeccc4e0303983e1d7647e35c60c5d54f8f54f93d5b71a2b5b8864fc"
+      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.43/teploy_darwin_amd64.tar.gz"
+      sha256 "d0ff85aab3575df73af6fa24b324aa03a604c74e726c8fc0add0ff5738a6a419"
 
       define_method(:install) do
         bin.install "teploy"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.42/teploy_darwin_arm64.tar.gz"
-      sha256 "8341d0dde3067ddb00352a422cbb2eb11f31748c0b97d3c462aa07f43e89e49d"
+      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.43/teploy_darwin_arm64.tar.gz"
+      sha256 "e35c1905d1b49b3941ba50905d8b6323db4c65b89f8024b4e0d5110d3ba81d1c"
 
       define_method(:install) do
         bin.install "teploy"
@@ -28,16 +28,16 @@ class Teploy < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.42/teploy_linux_amd64.tar.gz"
-      sha256 "9a0356fa72d192b4219e990fabd577b32ab7d0107589714f1c50d2333cb0fd59"
+      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.43/teploy_linux_amd64.tar.gz"
+      sha256 "0c9775728d8f36c6d63d1a7d6000fea8875d3736563c7aa6b3d6a95b183db7f0"
 
       define_method(:install) do
         bin.install "teploy"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.42/teploy_linux_arm64.tar.gz"
-      sha256 "caf1b38da81af8464a8abc2d7d663fc0ebcb0bebf4f39203ae36f0faa333cf79"
+      url "https://github.com/useteploy/teploy-cli/releases/download/v0.1.43/teploy_linux_arm64.tar.gz"
+      sha256 "949205ea8b7017b1971b87c2bc1738edad0e864fc1cc7616d87c138a11b850fb"
 
       define_method(:install) do
         bin.install "teploy"
