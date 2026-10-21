@@ -5,21 +5,21 @@
 class TeployDash < Formula
   desc "Self-hosted dashboard with uptime monitoring for Teploy CLI deployments"
   homepage "https://github.com/useteploy/teploy-dash"
-  version "0.1.19"
+  version "0.1.20"
   license "AGPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/useteploy/teploy-dash/releases/download/v0.1.19/teploy-dash_0.1.19_darwin_x86_64.tar.gz"
-      sha256 "d1f71588a617a12298aad5f9d9c91b96975d0a46099d047a87ee1c83e76b26f7"
+      url "https://github.com/useteploy/teploy-dash/releases/download/v0.1.20/teploy-dash_0.1.20_darwin_x86_64.tar.gz"
+      sha256 "6f6bf0548f27eca5bbacfb914e0e66ff126b0cc099c2b6e7fd62bb23bbe4b890"
 
       define_method(:install) do
         bin.install "teploy-dash"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/useteploy/teploy-dash/releases/download/v0.1.19/teploy-dash_0.1.19_darwin_arm64.tar.gz"
-      sha256 "70f5726c6635cba3bad99ede6dfea6ebad810bdb51131bf5870823f45863878d"
+      url "https://github.com/useteploy/teploy-dash/releases/download/v0.1.20/teploy-dash_0.1.20_darwin_arm64.tar.gz"
+      sha256 "4625fe75ff8ccd5e54045fe7a1b4f2822a158bb75ec8cb9f4ba8142b8d0095f4"
 
       define_method(:install) do
         bin.install "teploy-dash"
@@ -29,15 +29,15 @@ class TeployDash < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy-dash/releases/download/v0.1.19/teploy-dash_0.1.19_linux_x86_64.tar.gz"
-      sha256 "fcee68139cf60544c74f8f4e78454fdc02359c359e79835561e5075f0f89bce3"
+      url "https://github.com/useteploy/teploy-dash/releases/download/v0.1.20/teploy-dash_0.1.20_linux_x86_64.tar.gz"
+      sha256 "580a3af15e4a748b44d3b55b5e32c14934fbf56910515361c20a3a58d38474fe"
       define_method(:install) do
         bin.install "teploy-dash"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/useteploy/teploy-dash/releases/download/v0.1.19/teploy-dash_0.1.19_linux_arm64.tar.gz"
-      sha256 "e6f8401b1fdafc3787deb7ccb19e7d66046f7c08a10c8ed0e59637f3877613de"
+      url "https://github.com/useteploy/teploy-dash/releases/download/v0.1.20/teploy-dash_0.1.20_linux_arm64.tar.gz"
+      sha256 "9ccf6a02042fe213dc16c279fb9812feddebacb13da37bf286b299e5f54cdc39"
       define_method(:install) do
         bin.install "teploy-dash"
       end
