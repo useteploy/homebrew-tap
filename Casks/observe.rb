@@ -4,22 +4,22 @@ cask "observe" do
 
   on_macos do
     on_intel do
-      sha256 "7a94dee9d378747ece230005ef1c1c1ee6a329f0800a313d7a3937cfb7389389"
+      sha256 "62f3fc61dba70b11847a7596f0f4b1e49489b1d3bdcdccdc9d9846097edadb8f"
       url "https://github.com/useteploy/teploy-observe/releases/download/v#{version}/observe_#{version}_darwin_x86_64.tar.gz"
     end
     on_arm do
-      sha256 "37bf63a1c0b009e8289ce1eb8d24ad534396887df71afaeed2f7b3ea09e4deef"
+      sha256 "1e746997f518ba8c52f4ca65c3f22d937049b0788a9bc3b859a0caf8bd47ff02"
       url "https://github.com/useteploy/teploy-observe/releases/download/v#{version}/observe_#{version}_darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
-      sha256 "13e9ae7305ff304da749d7401844ff4665898a683e5f7b354c8d3a87f47f8551"
+      sha256 "366bf775435553a5ab7bb4056574b97d93054ce2423503b879888eed8c5f0be6"
       url "https://github.com/useteploy/teploy-observe/releases/download/v#{version}/observe_#{version}_linux_x86_64.tar.gz"
     end
     on_arm do
-      sha256 "579f48db61aa574ac1a4e19ff99420a3d879eca5e76188410066961209ce5594"
+      sha256 "13d78925b4c0eb94121d1e5ecf9cde47054cc43f5904add350ad81069c3324ec"
       url "https://github.com/useteploy/teploy-observe/releases/download/v#{version}/observe_#{version}_linux_arm64.tar.gz"
     end
   end
